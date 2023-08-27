@@ -1,0 +1,298 @@
+
+  @media (max-width: 425px) {
+   
+    .whole {
+      height: 40vh; /* Further adjusted height for smaller screens */
+    }
+  
+    .lo {
+      width: 120px; /* Further adjusted width for smaller screens */
+      height: 80px; /* Further adjusted height for smaller screens */
+      margin: 6px 0; /* Further adjusted margin for smaller screens */
+      background-size: 60px; /* Further adjusted background size for smaller screens */
+    }
+  
+    
+  /* why jaffer group */
+  /* Adjusted styles for paragraphs and vision section */
+  p {
+    font-size: 14px; /* Adjusted font size */
+    margin-top: 25px; /* Adjusted margin */
+  }
+
+  div.vision {
+    /* No changes */
+    color: black;
+  }
+
+  div.visimg {
+    /* No changes */
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+  }
+
+  div#vision {
+    /* No changes */
+    background-color: white;
+  }
+
+  /* General styles for sections */
+  .section {
+    /* Adjusted padding for sections */
+    text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f3f3;
+  }
+
+  /* Styles for left and right columns */
+  .left,
+  .right {
+    font-family: serif;
+   
+    width: 100%;
+  }
+
+  /* Styles for step titles and content */
+  .step {
+    margin-bottom: 15px;
+  }
+
+  .step h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .step h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .step p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* Styles for content container */
+  .content-container1 {
+    /* Adjusted padding for content container */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    font-family: serif;
+    padding: 15px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Styles for image container */
+  .images {
+    /* Adjusted margin for image container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  /* Styles for images */
+  .images img {
+    max-width: 100%;
+  }
+
+  /* Media Query for responsiveness */
+  @media (max-width: 425px) {
+    
+    .content-container1 {
+      /* Further reduced padding */
+      padding: 80px;
+    }
+
+    .step h2 {
+      /* Adjusted font size */
+      font-size: 20px;
+    }
+
+    .step h3 {
+      /* Adjusted font size */
+      font-size: 14px;
+    }
+
+    .step p {
+      /* Adjusted font size */
+      font-size: 10px;
+    }
+  }
+
+    /* close why jaffer group */
+    
+    
+    
+    /* ceo mesage */
+/* CEO message */
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+}
+
+.content-container {
+  border: 8px solid grey;
+  display: flex;
+  flex-direction: column; /* Adjusted for responsiveness */
+  align-items: center;
+  width: 80%;
+  font-family: serif;
+  background-color: white;
+  padding: 10px; /* Adjusted padding for smaller screens */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-height: 80vh; /* Adjusted max-height for responsiveness */
+  overflow-y: auto; /* Added scrolling for smaller screens */
+}
+
+.message-container {
+  text-align: justify;
+  padding-right: 0; /* Removed right padding for responsiveness */
+  margin: 80px 0; 
+  /* Adjusted margin for spacing */
+}
+
+i {
+  color: red;
+}
+
+.message-container h2 {
+  font-weight: bold; /* Fixed typo in property name */
+  margin: 45; /* Adjusted margin for spacing */
+}
+
+.image-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Adjusted margin for spacing */
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* cluture */
+/* Culture section */
+
+.slide1 img {
+  height: 80%;
+  width: 110px;
+  margin: 0 10px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+/* beenefits starts*/
+/* Section container styles */
+.section-container {
+  display: flex;
+  flex-direction: column; /* Stack content in a column for smaller screens */
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Image container styles */
+.image-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Benefits container styles */
+.benefits-container {
+  flex: 1;
+  width: 100%; /* Full width for responsiveness */
+  max-width: 300px; /* Adjusted maximum width */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin-top: 20px; /* Adjusted margin for spacing */
+}
+
+/* Benefits heading styles */
+.benefits-heading {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Benefits icons container styles */
+.benefits-icons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Benefit icon container styles */
+.benefit {
+  flex: 0 0 calc(50% - 10px);
+  display: flex;
+  background-color: white;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Benefit icon styles */
+.benefit-icon {
+  width: 80px; /* Adjusted width */
+  height: 80px; /* Adjusted height */
+  font-size: 60px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 426px) {
+  .section-container {
+    padding: 10px 0; /* Adjusted padding */
+  }
+
+  .benefits-container {
+    max-width: none; /* Reset max-width for responsiveness */
+    width: 100%; /* Full width for responsiveness */
+    height: 400%; /* Adjusted height */
+  }
+
+  .benefit {
+    flex: 0 0 100%; /* Display one icon at a time */
+    margin: 10px 0; /* Adjusted margin for spacing */
+  }
+
+  .benefit-icon {
+    width: 60px; /* Adjusted width */
+    height: 60px; /* Adjusted height */
+    font-size: 40px; /* Adjusted font size */
+  }
+}
+
+
+  }
+  @media screen and (max-width: 425px){
+   .container {
+    margin-top: 20px;
+    text-align: center;
+}
+}

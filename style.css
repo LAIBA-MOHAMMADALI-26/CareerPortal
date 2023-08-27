@@ -1,0 +1,505 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Josefin Sans', sans-serif; */
+    font-family:  serif;
+    background-color:white;
+}
+
+/* whole div of page  */
+
+div.whole{
+    display: flex;
+    flex-direction: column;
+}
+
+/* nav css  */
+
+.nav-link {
+    font-weight: bold;
+    /* font-size: 14px; */
+    text-transform: uppercase;
+    text-decoration: none;
+    color:white;
+    padding: 10px 0px;
+    margin: 0px 7px;
+    display: inline-block;
+    position: relative;
+    opacity: 0.75;
+    /* font-size:1em; */
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  .nav-link:hover {
+    opacity: 1;
+  }
+  .nav-link::before {
+    transition: 300ms;
+    height: 3px;
+    content: "";
+    position: absolute;
+    background-color:red;
+  }
+  
+  .nav-link-ltr::before {
+    width: 0%;
+    bottom: 6px;
+  }
+  
+  .nav-link-ltr:hover::before {
+    width: 100%;
+  }
+  li.nav#item{
+    font-size:7px;
+  }
+  a.nav-link.nav-link-ltr.active{
+    color:white;
+    font-size: 15px;
+
+  }
+  .nav-toggler{
+    display: none;
+    color: #ff0000;
+  }
+  .navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-image: var(--bs-navbar-toggler-icon-bg);
+    background-repeat: no-repeat;
+    background-color: white;
+    background-position: center;
+    background-size: 100%;
+  }
+  /* nav css ends  */
+
+ /* cover image  starts here */
+/* Reset default margins and paddings */
+body, h1, h2, p {
+  font-size: 50px;
+  font-weight: 900px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base styles for the whole page */
+.whole {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+/* Cover Image Styles */
+.scr {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/images/white.jpg'); /* Set the background image here */
+}
+
+/* Container Styles */
+.container {
+  text-align: center;
+}
+
+/* Logo Styles */
+.lo {
+  width: 300px; /* Adjust the width as needed */
+  height: 190px;
+  margin: 10px 0; /* Adjust margin as needed */
+ background-size: 200px;
+}
+
+/* Portal Name Styles */
+.portal-name {
+  font-size: 28px;
+  font-style: serif;
+  font-weight: bold;
+}
+
+/* Highlight Styles */
+.highlight {
+  color: #ff0000; /* Change this color to your preference */
+  font-weight: bold;
+  font-family:  serif;
+}
+
+/* Empowering Text Styles */
+.empowering-text {
+  font-size: 24px;
+  font-family:  serif;
+  line-height: 1.4;
+}
+
+/* Media Query for responsiveness */
+
+  .welcome-text {
+    font-size: 40px;
+    padding-top: 50px;
+    font-family:  serif;
+  }
+
+  .empowering-text {
+    font-size: 30px;
+    font-family:  serif;
+  }
+
+
+
+/* cover image ends here  */
+
+  /* css of why jaffer starts  */
+ 
+  p {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+   div.vision{
+    /* background-color: rgb(246, 246, 246); */
+    color: black;
+    /* border:0px solid rgb(255, 255, 255); */
+   }
+   div.visimg{
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:80%;
+   }
+  
+div#vision{
+  background-color: white;
+}
+.section {
+  text-align: center;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #f5f3f3;
+}
+
+.left {
+  flex: 1;
+  padding-right: 20px;
+  text-align: left;
+}
+
+.right {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.step {
+  margin-bottom: 20px;
+}
+.step h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: red;
+  font-weight: bold;
+  text-decoration: underline; 
+  font-family: sans-serif;
+}
+
+
+.step h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: red;
+  font-weight: bold; /* This line makes the text bold */
+  font-family: sans-serif; /* This line sets the font to sans-serif */
+}
+.step p {
+  font-size: 16px;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+.content-container1 {
+  /* border: 8px solid grey; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  background-color: white;
+  font-family:  serif;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 70%;
+}
+
+
+.left {
+  font-family: serif; /* Change to the desired serif font */
+}
+
+.step h3, .step p {
+  font-family: serif; /* Change to the desired serif font */
+}
+.content-container1 .left {
+  width: 50%; /* Adjust the width of the left side */
+}
+
+.content-container1 .right {
+  width: 50%;
+  font-family:  serif; /* Adjust the width of the right side */
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%; /* Adjust the width of the images container */
+}
+
+.images img {
+  max-width: 100%; /* Adjust the maximum width of the images */
+  max-height:150%; /* Adjust the maximum height of the images */
+}
+
+ /* chairmans message  */
+ .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:white;
+   
+}
+
+.content-container {
+    border: 8px solid grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    font-family:  serif;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height:80%;
+}
+
+.message-container {
+    flex: 1;
+    text-align: justify;
+    padding-right: 20px;
+}
+
+i{
+    color:rgb(223, 11, 11);
+}
+
+.message-container h2 {
+    font-weight: bolder;
+}
+
+.image-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:40px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+
+}
+
+.image-overlay {
+
+    width:83%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    bottom: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.image-container:hover .image-overlay {
+    transform: translateY(0);
+}
+
+
+/* culture ss starts here  */
+
+div#culture {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 80vh;
+  background-color: white;
+}
+
+h1.culturehead {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: black;
+}
+
+.slider1 {
+  
+  display: flex;
+  height: 350px;
+  max-height: auto;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll !important;
+  padding: 16px;
+  transform: scroll(calc(var(--i,0)/var(--n)*-100%));
+  scroll-behavior: smooth;
+  background-color: white;
+}
+
+.slider1::-webkit-scrollbar {
+  height: 5px;
+  width: 150px;
+  display: none;
+}
+
+.slider1::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.slider1::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.slider1::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.slider1 img:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.slide1 {
+  flex: 0 0 33.33%; /* Display 3 images at a time */
+  max-width: 33.33%;
+  padding: 10px;
+  position: relative;
+}
+ 
+
+.slide1 img {
+  height: 100%;
+  width: 350px;
+  margin: 0 10px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+.slide1 img.zoomed {
+  width: 500px;
+  height: 600px;
+  position: fixed;
+  left: 25%;
+  top: 0%;
+  z-index: 1000;
+  transform: scale(1) translatey(0) !important;
+}
+
+@media only screen and (max-width: 420px) {
+  .slider1 {
+      padding: 0;
+  }
+
+  .slide1 {
+      padding: 16px 10px;
+  }
+
+  .slide1 img {
+      margin: 0;
+  }
+}
+
+i.glo {
+  color: white;
+  font-size: 40px;
+}
+
+
+  /* benefit css start here */
+  .section-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.image-container2 {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom:40px;
+}
+
+.image-container2 img {
+  max-width: 100%;
+  height: auto;
+
+}
+
+
+.benefits-container {
+  flex: 1;
+  width: 300px; /* Adjust the width as desired */
+  height: 450px; /* Adjust the height as desired */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+
+.benefits-heading {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.benefits-icons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.benefit {
+  flex: 0 0 calc(50% - 10px);
+  display: flex;
+  background-color: white;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.benefit-icon {
+  width: 80px; /* Adjust the width as desired */
+  height: 80px; /* Adjust the height as desired */
+  font-size: 60px;
+  font-weight: bold;
+  margin-right: 10px;
+}
