@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -11,7 +13,13 @@
     <link rel="stylesheet" href="media1-queries.css">
     <link rel="stylesheet" href="media2-queries.css">
     <link rel="stylesheet" href="media3-queries.css">
+<style>
+  <?php include "mediaqueries.css" ?>
+  <?php include "media1-queries.css" ?>
+  <?php include "media2-queries.css" ?>
+  <?php include "media3-queries.css" ?>
 
+</style>
 
     <link
     rel="stylesheet"
@@ -36,6 +44,7 @@
 
     
 </head>
+
 <body>
 
 
@@ -159,7 +168,7 @@
   </div>
   <div class="right">
       <div class="images">
-          <img src="images/image3.png" alt="Image 1">
+          <img src="images/image52.png" alt="Image 1">
           
       </div>
   </div>
@@ -172,7 +181,6 @@
     <div class="content-container">
         <div class="message-container">
             <h2>CHAIRMAN'S MESSAGE</h2>
-            
             <i class="fa fa-quote-left" style="font-size:48px;color:red"></i>
             
             <p>  
@@ -215,7 +223,16 @@
     <img src="images/Culture 6.jpeg" alt="">
   </div>
   <div class="slide1">
-    <img src="images/Culture 8.jpeg" alt="">
+    <img src="images/culture11.jpg" alt="">
+  </div>
+  <div class="slide1">
+    <img src="images/culture10.jpg" alt="">
+  </div>
+  <div class="slide1">
+    <img src="images/culture9.jpg" alt="">
+  </div>
+  <div class="slide1">
+    <img src="images/culture12.jpg" alt="">
   </div>
 </div>
 </div>
@@ -250,7 +267,7 @@
 <!-- benefit  start here  -->
 <div class="section-container" id="benefits">
   <div class="image-container">
-    <img class="larger-image" src="images/collage3.png" width="500px" height="40px" alt="Larger Image">
+    <img class="larger-image" src="images/finalcollage.png" width="500px" height="40px" alt="Larger Image">
   </div>
   <div class="benefits-container">
       <h2 class="benefits-heading">Employee Benefits</h2>

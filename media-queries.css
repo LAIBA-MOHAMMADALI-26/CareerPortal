@@ -41,7 +41,7 @@
 
 /* Portal Name Styles */
 .portal-name {
-  font-size: 28px;
+  font-size: 46px;
   font-weight: bold;
 }
 
@@ -60,7 +60,7 @@
 /* Media Query for responsiveness */
 
   .welcome-text {
-    font-size: 40px;
+    font-size: 46px;
   }
 
   .empowering-text {
@@ -71,7 +71,14 @@
 
 /* whole page 1024*/
 @media screen and (max-width:1024px){
-  
+  .welcome-text {
+    font-size: 46px;
+  }
+/* Portal Name Styles */
+.portal-name {
+  font-size: 46px;
+  font-weight: bold;
+}
 
   /* Cover Image Styles */
 /* Media Query for responsiveness */
