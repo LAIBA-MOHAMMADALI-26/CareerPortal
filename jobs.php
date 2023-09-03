@@ -335,7 +335,9 @@ form input[type="text"] {
  td{
   font-size:5px;
  }
-
+a{
+  text-decoration:none;
+}
 }
 
 
@@ -450,7 +452,8 @@ form input[type="text"] {
 
 			<td><?php echo $row["StartDate"] ?></td> <!-- Display Start Date -->
       <td><?php echo $row["EndDate"] ?></td> <!-- Display End Date -->
-      <td>  <button class='apply-btn'>Apply Now</button></td>
+      <td><a href="apply.php?job_id=<?php echo $row['ID']; ?>" class="apply-btn">Apply Now</a></td>
+
     
            
           
