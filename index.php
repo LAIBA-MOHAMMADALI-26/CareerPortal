@@ -41,6 +41,7 @@
 <!-- aos links  -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
 
     
 </head>
@@ -49,60 +50,88 @@
 
 
      <!-- navbar starts -->
-   
+     <nav id="myNavbar" class="navbar fixed-top navbar-expand-lg text-dark" style="background-color: white;">
+  <div class="container-fluid">
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <nav id="myNavbar" class=" navbar fixed-top navbar-expand-lg  text-dark" style="background-color:black;color:white">
-    <div class=" container-fluid">
-      <!-- <img src="LOGO.png"  alt="Logo" width="60" height="60" class=" d-inline-block align-text-top" > -->
-            <span class=" badge mx-2 fs-2" ><img style="border-radius: 50%;" width="50px" height="50px" src="images/navbarlogo.png" ></span>
-      <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class=" navbar-toggler-icon"></span>
-      </button>
+    <!-- Place the logo directly inside the container without any surrounding elements -->
+    <img src="images/logo-modified.png" alt="Logo" width="330px" height="80px" class="d-inline-block align-text-top">
+
+  
       <div class=" collapse navbar-collapse" id="navbarSupportedContent">
         <ul class=" navbar-nav me-auto mb-2 mb-lg-0">
           <li class=" nav-item">
-            <a class="nav-link nav-link-ltr nav-link active" onclick="closeNavbar()" aria-current="page" href="#image"><b>  Home</b>
+            <a class="nav-link nav-link-ltr nav-link active" onclick="closeNavbar()" aria-current="page" href="#image">  Home
               </a>
           </li>
           <li class=" nav-item">
-            <a class="nav-link nav-link-ltr nav-link active" onclick="closeNavbar()" aria-current="page" href="#pur"><b>Why Jaffer Group</b>
+            <a class="nav-link nav-link-ltr nav-link active" onclick="closeNavbar()" aria-current="page" href="#pur">Why Jaffer Group
               </a>
           </li>
           <li class=" nav-item">
-            <a class="nav-link nav-link-ltr nav-link active" onclick="closeNavbar()" href="#ceo"><b>Chairman's Message</b>
+            <a class="nav-link nav-link-ltr nav-link active" onclick="closeNavbar()" href="#ceo">Chairman's Message 
             </a>
           </li>
           <li class=" nav-item">
-            <a class="nav-link nav-link-ltr nav-link active" onclick="closeNavbar()" onclick="closeNavbar()"  href="#culture"><b>Culture</b>
+            <a class="nav-link nav-link-ltr nav-link active" onclick="closeNavbar()" onclick="closeNavbar()"  href="#culture">Culture
                </a>
             </li>
           <li class=" nav-item">
-            <a class="nav-link nav-link-ltr nav-link active" onclick="closeNavbar()" onclick="closeNavbar()"  href="#benefits"><b>Employee Benefits</b>
+            <a class="nav-link nav-link-ltr nav-link active" onclick="closeNavbar()" onclick="closeNavbar()"  href="#benefits">Employee Benefits
                </a>
             </li>
             
                 <li class=" nav-item">
-                    <a class="nav-link nav-link-ltr nav-link active" onclick="closeNavbar()" onclick="closeNavbar()"  href="jobs.php"><b>Job Listing</b>
+                    <a class="nav-link nav-link-ltr nav-link active" onclick="closeNavbar()" onclick="closeNavbar()"  href="jobs.php">Job Listing
                        </a>
                     </li>
-            
+
+            <!-- Add image icons here -->
+    
           </ul>
+             
+          <a href="http://www.youtube.com/channel/UC6B6cyabURnjp1Jr7EmUgoQ/videos?disable_polymer=1" target="_blank">
+    <span class="fa-stack fa-lg red-icon">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-play fa-stack-1x fa-inverse" aria-hidden="true" style="left: 1px; font-size: 0.7em;"></i>
+    </span>
+</a>
+<a href="http://www.facebook.com/jaffergroup" target="_blank">
+    <span class="fa-stack fa-lg red-icon">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-facebook fa-stack-1x fa-inverse" aria-hidden="true"></i>
+    </span>
+</a>
+<a href="http://www.twitter.com/jaffergroup" target="_blank">
+    <span class="fa-stack fa-lg red-icon">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-twitter fa-stack-1x fa-inverse" aria-hidden="true"></i>
+    </span>
+</a>
+<a href="http://www.linkedin.com/company/jaffer-brothers-pvt-limited" target="_blank">
+    <span class="fa-stack fa-lg red-icon">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-linkedin fa-stack-1x fa-inverse" aria-hidden="true"></i>
+    </span>
+</a>
+
         
-          <!-- <form class=" d-flex" role="search">
-            <input class=" form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class=" btn btn-outline-success bg-dark text-light" type="submit"><b>   Search</b>
-           </button>
-          </form> -->
+       
         </div>
       </div>
     </nav> 
    
 
 <!-- nav ends -->
+   
+
+<!-- nav ends -->
 
 <div class="whole" id="image">
   <!-- Cover Image -->
-  <div class="scr pane prt first" style="background-image: url('images/download-_3_.jpg');"> <!-- Set the background image here -->
+  <div class="scr pane prt first" style="background-image: url('images/bg.jpg');"> <!-- Set the background image here -->
     <div class="container">
       <h1 class="animate-reveal animate-first">
         <h1 class="welcome-text">
@@ -111,12 +140,15 @@
           <span class="portal-name">Career Portal</span>
         </h1>
       </h1>
-      <h1 class="animate-reveal animate-first">
-        <h1 class="empowering-text">
-          Empowering <span class="highlight">People</span>, Enriching <span class="highlight">Culture</span><br>
-          Our commitment to Growth & Transformation
-        </h1>
-      </h1>
+      <div class="animation-container">
+  <h1 class="animate-reveal animate-first">
+    <h1 class="empowering-text">
+      Empowering <span class="highlight">People</span>, Enriching <span class="highlight">Culture</span><br>
+      Our commitment to Growth & Transformation
+    </h1>
+  </h1>
+</div>
+
     </div>
   </div>
 </div>
@@ -129,14 +161,14 @@
     <div class="message-container">
       <h2>Why Jaffer Group?</h2>
             
-      <i class="fa fa-quote-left" style="font-size:20px;color:red"></i>
+      
             
       <p>
         <font-cairo>At Jaffer Group, we don't just offer jobs; we provide pathways to fulfilling careers built on a foundation of excellence and innovation. Joining our team means becoming a part of a legacy that spans generations, a culture that values diversity and inclusion, and a commitment to making a positive impact in the communities we serve. For over 75 years, Jaffer Group has been a trusted name, our rich history and tradition of excellence serve as a testament to the passion and dedication of our team. If you are seeking a workplace where you can grow, thrive, and make a difference, Jaffer Group welcomes you to explore the opportunities we have to offer.
         </font-cairo></p>
     </div>
-    <div class="visimg">
-      <img width="100%" height="200%" src="images/hands.png" alt="values">
+    <div class="vision">
+      <img width="100%" height="100%" src="images/hands.png" alt="values">
     </div>
   </center>
   </div>
@@ -150,25 +182,26 @@
     
 
       <div class="step">
-          <h3>Apply</h3>
-          <p>Scroll through the open vacancies below and apply for positions that align with your particular skillset.</p>
+          <h3 class="head">Apply:</h3>
+          <p>Browse through our current job openings and submit your application for roles that match your unique skillset.</p>
         </div>
       <div class="step">
-          <h3>Review</h3>
-          <p>Our expert recruiters review your application. They will screen your résumé and find the best fit for you.</p>
+          <h3 class="head">Shortlist:</h3>
+          <p>Our seasoned recruiters will carefully assess your application. They'll review your resume and identify the most suitable positions for your qualifications and experience.</p>
         </div>
       <div class="step">
-          <h3>Interviews</h3>
-          <p>We have a competency-based interviewing process to identify the people who will thrive in our environment. Each department has its own criteria, but they usually revolve round the recruiter’s phone screen, the hiring manager’s interview, and a combination of technical screens, panel interviews, and team presentations.</p>
+          <h3 class="head">Assess/Evaluate:</h3>
+          <p>We employ a competency-based evaluation process to identify individuals who will excel in our work environment. This process typically includes a recruiter's initial phone screening, an interview with the hiring manager, and a combination of technical assessments, panel interviews, and team presentations, each tailored to the specific department.</p>
         </div>
       <div class="step">
-          <h3>Onboarding</h3>
-          <p>Once you’ve received the “Welcome Aboard” message, our onboarding experience will polish and set you up for your professional journey with Systems Limited.</p>
+          <h3 class="head">Onboard:</h3>
+          <p>Onboard:
+After receiving the "Welcome Aboard" message, our comprehensive onboarding program will refine your skills and prepare you for a successful journey at Jaffers.</p>
         </div>
   </div>
   <div class="right">
       <div class="images">
-          <img src="images/image52.png" alt="Image 1">
+          <img src="images/image53.png" alt="Image 1">
           
       </div>
   </div>
@@ -181,18 +214,18 @@
     <div class="content-container">
         <div class="message-container">
             <h2>CHAIRMAN'S MESSAGE</h2>
-            <i class="fa fa-quote-left" style="font-size:48px;color:red"></i>
-            
+           
+            <i class="fa fa-quote-left" style="font-size:20px;color:red"></i>
             <p>  
                 The ongoing success of Jaffer Group relies on the high quality of our people and their commitment to the company objectives. Continued growth and development are essential for all our employees. 
                 We therefore need strong people management and development processes in all our businesses. As a reflection of our values and our Success Factors, the P&D Dialog is central to this.
                  With a high performance culture aligned to our business principles, we will grow from strength to strength.</p>
         </div>
-        <div class="image-container">
-            <img width="%"100 height="100%" src="https://enapk.com/new/wp-content/uploads/2021/05/naseer.jpg" alt="Nasser N. S. Jaffer">
+        <div class="image-containers">
+            <img width="%"100 height="100%" src="images/naseer.jpg" alt="Nasser N. S. Jaffer">
             <div class="image-overlay">
                 <h1>Nasser N. S. Jaffer</h1>
-                <h3>Chairman</h3>
+                <h3></h3>
             </div>
         </div>
     </div>
@@ -202,7 +235,7 @@
 
 
 <div class="cultureslider" id="culture">
-    <h1 class="culturehead">Our Dynamic Culture </h1>
+    <h1 class="culturehead">Our Culture </h1>
 <div id="slider-container1" class="slider1">
 	<div class="slide1">
 			<img src="images/Culture 1.jpg" alt="">
@@ -267,45 +300,18 @@
 <!-- benefit  start here  -->
 <div class="section-container" id="benefits">
   <div class="image-container">
-    <img class="larger-image" src="images/finalcollage.png" width="500px" height="40px" alt="Larger Image">
+    <img class="larger-image" src="images/finalcollage.png" width="500px" height="70px" alt="Larger Image">
   </div>
   <div class="benefits-container">
-      <h2 class="benefits-heading">Employee Benefits</h2>
+    <div class="h2"> <h2 class="benefits-heading">EMPLOYEE BENEFITS</h2></div>
+     
       <div class="benefits-icons">
-          <div class="benefit">
-              <img class="benefit-icon" src="images/icon1-2.png" alt="Icon 1">
-              <p>Healthcare</p>
-          </div>
-          <div class="benefit">
-              <img class="benefit-icon" src="images/icon2.png" alt="Icon 2">
-              <p>Vacation</p>
-          </div>
-          <div class="benefit">
-              <img class="benefit-icon" src="images/icon3.png" alt="Icon 3">
-              <p>Retirement</p>
-          </div>
-          <div class="benefit">
-              <img class="benefit-icon" src="images/icon4.png" alt="Icon 4">
-              <p>Bonuses</p>
-          </div>
-          <div class="benefit">
-              <img class="benefit-icon" src="images/icon5.png" alt="Icon 5">
-              <p>Training</p>
-          </div>
-          <div class="benefit">
-              <img class="benefit-icon" src="images/icon6.png" alt="Icon 6">
-              <p>Flexible Hours</p>
-
-          </div>
-          <div class="benefit">
-            <img class="benefit-icon" src="images/icon7.png" alt="Icon 6">
-            <p>on site gym</p>
+      <img src="images/BENEFITS.png" width="100%" height="90%" alt="">
             
-        </div>
+          </div>
+          
       </div>
   </div>
-</div>
-
  <!-- Required Bootstrap JavaScript files -->
 
 

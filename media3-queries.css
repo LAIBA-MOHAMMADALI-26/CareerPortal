@@ -162,7 +162,17 @@
   }
 
   /* Media Query for responsiveness */
-  @media (max-width: 375px) {
+  @media screen and (max-width: 376px){
+    .container {
+      height: 350px;
+      margin-top: 30%;
+      text-align: center;
+  }
+  div.vision {
+    color: black;
+    margin-top: 20%;
+}
+
     .content-container1 {
       /* Further reduced padding */
       padding: 20px;
@@ -182,7 +192,7 @@
       /* Adjusted font size */
       font-size: 10px;
     }
-  }z
+  }
 
     /* close why jaffer group */
 /* CEO message */

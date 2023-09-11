@@ -44,7 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $workCity = $_POST["work_city"];
     $totalExperience = $_POST["total_experience"];
     $aboutYourself = $_POST["about_yourself"];
-
+    $lastdropsalary=$_POST['last_drop_salary'];
+    $grosssalary=$_POST['gross_salary'];
     // File upload handling
     $uploadDirectory = 'uploads/'; // Specify the directory where you want to store uploaded files
     $resumeFileName = $_FILES["resume"]["name"];
@@ -52,12 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     move_uploaded_file($_FILES["resume"]["tmp_name"], $resumeFilePath);
 
     // Insert data into the database
-    $sql = "INSERT INTO apply (ID, Title, CandidateName, DateOfBirth, Gender, CNIC, Email, ContactNo, HomeCountry, HomeCity, LastQualification, Majors, Institute, PassingYear, LastEmployerName, LastDesignation, WorkCountry, WorkCity, Experience, About, CV) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO apply (ID, Title, CandidateName, DateOfBirth, Gender, CNIC, Email, ContactNo, HomeCountry, HomeCity, LastQualification, Majors, Institute, PassingYear, LastEmployerName, LastDesignation,LastDropSalary,GrossSalary, WorkCountry, WorkCity, Experience, About, CV) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
     
     if ($stmt) {
         // Binding parameters and executing the statement
-        mysqli_stmt_bind_param($stmt, "issssssssssssssssssss", $jobId, $title, $fullName, $dob, $gender, $cnic, $email, $contactNumber, $country, $city, $qualification, $majors, $institute, $passingYear, $employerName, $designation, $workCountry, $workCity, $totalExperience, $aboutYourself, $resumeFilePath);
+        mysqli_stmt_bind_param($stmt, "issssssssssssssssssssss", $jobId, $title, $fullName, $dob, $gender, $cnic, $email, $contactNumber, $country, $city, $qualification, $majors, $institute, $passingYear, $employerName, $designation,
+        $lastdropsalary,$grosssalary, $workCountry, $workCity, $totalExperience, $aboutYourself, $resumeFilePath);
     
         if (mysqli_stmt_execute($stmt)) {
             $success = true;
@@ -80,19 +82,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <!-- Include your CSS and other meta tags -->
 
   <style>
-    body{
-        font-family:  serif;
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
     }
+
     /* Style for form container */
     form {
-      max-width: 600px;
+      max-width:90%;
       margin: 0 auto;
       padding: 20px;
       background-color: #fff;
       border: 1px solid #ddd;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      
     }
 
     /* Style for form labels */
@@ -115,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       border: 1px solid #ddd;
       border-radius: 5px;
       font-size: 16px;
-      border:1px solid grey;
+      border: 1px solid grey;
     }
 
     /* Style for select dropdown */
@@ -143,11 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     /* Style for form section headers */
-    h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #333;
-    }
+    
 
     /* Style for file input label */
     input[type="file"] + label {
@@ -165,63 +163,134 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     input[type="file"] + label:hover {
       background-color: #cc0000;
     }
+
     /* Modal styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.7);
-  overflow: auto;
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      overflow: auto;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+    }
+
+    /* Notification styles */
+    .notification {
+      display: none;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      width: 100%;
+    }
+
+    /* Additional style for invalid input fields */
+    .invalid-input {
+      border: 2px solid red;
+    }
+    /* Style for form rows */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin
+}
+/* Style for form rows */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
-.modal-content {
-  background-color: #fff;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
+/* Style for form groups (each field and its label) */
+.form-group {
+  flex: 1;
+  margin-right: 10px; /* Adjust the spacing between fields */
+}
+
+/* Ensure the last form group doesn't have extra margin */
+.form-row:last-child .form-group {
+  margin-right: 0;
+}
+
+/* Style for text input fields */
+input[type="text"],
+input[type="email"],
+input[type="file"],
+select,
+textarea {
   width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  border: 1px solid grey;
 }
+.header-container {
+      display: flex;
+      align-items: center;
+    }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover, .close:focus {
-  color: black;
-  text-decoration: none;
-}
-
-/* Notification styles */
-.notification {
-  display: none;
-  background-color: #4CAF50;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  width: 100%;
-}
-h2{
-    text-align:center;
+    /* Style for the h2 heading */
+    h1 {
+    
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    
+      /* margin-left: 0px;  */
+      /* Add some spacing between the logo and heading */
+    }
+    /* Custom style for wider input fields */
+.wide-input {
+  width: 80%;/* Adjust the width as needed */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  border: 1px solid grey;
 }
 
   </style>
 </head>
+
 <body>
-<h2>Apply for Job: <?php echo $title; ?></h2>
+<div class="header-container">
+  <!-- Add a logo image here -->
+  <img src="images/jafferlogo.png" alt="Your Logo" width="100" height="100">
+  <h1>Apply for Job:<?php echo strtoupper($title); ?></h1>
+</div>
 <form action="<?php echo $_SERVER['PHP_SELF'] . '?job_id=' . $jobId; ?>" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="job_id" value="<?php echo $jobId; ?>">
 
@@ -230,72 +299,148 @@ h2{
   <br>
   <input type="text" id="position" name="position" required readonly value="<?php echo $title; ?>">
 
-  <!-- Personal Information -->
-  <label for="full_name">Name of Candidate *</label>
-  <input type="text" id="full_name" name="full_name" required>
+ <!-- Full Name (CandidateName) and Date of Birth (DateOfBirth) -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="full_name">Name of Candidate *</label>
+    <input type="text" id="full_name" name="full_name" class="letters-only" pattern="^[a-zA-Z. ]+$" required placeholder="John Doe" maxlength="20">
+  </div>
+  <div class="form-group">
+    <label for="dob">Date of Birth *</label>
+    <input type="date" id="dob" name="dob" class="wide-input" required>
+  </div>
+</div>
 
-  <label for="dob">Date of Birth *</label>
-  <input type="date" id="dob" name="dob" placeholder="mm/dd/yyyy" required>
+<!-- Gender and CNIC -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="gender">Gender</label>
+    <select class="wide-input" id="gender" name="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="cnic">CNIC *</label>
+    <input type="text" id="cnic" name="cnic" class="num-and-hyphen" pattern="^\d{5}-\d{7}-\d$" required placeholder="12345-1234567-1" maxlength="15">
+  </div>
+</div>
 
-  <label for="gender">Gender</label>
-  <select id="gender" name="gender">
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-  </select>
+<!-- Email Address (Email) and Contact Number (ContactNo) -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="email">Email Address *</label>
+    <input type="email" id="email" name="email" required placeholder="example@example.com" maxlength="50">
+  </div>
+  <div class="form-group">
+    <label for="contact_number">Contact Number *</label>
+    <input type="text" id="contact_number" class="num-only" name="contact_number" pattern="^03\d{9}$" required placeholder="03XXXXXXXXX" maxlength="11">
+  </div>
+</div>
 
-  <label for="cnic">CNIC / ID / Passport No *</label>
-  <input type="text" id="cnic" name="cnic" required>
+<!-- Home Country (HomeCountry) and Home City (HomeCity) -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="country">Home Location - Country *</label>
+    <input type="text" id="country" name="country" class="letters-only" required placeholder="Pakistan" maxlength="15">
+  </div>
+  <div class="form-group">
+    <label for="city">Home Location – City *</label>
+    <input type="text" id="city" name="city" class="letters-only" required placeholder="Karachi" maxlength="15">
+  </div>
+</div>
 
-  <label for="email">Email Address *</label>
-  <input type="email" id="email" name="email" required>
+<!-- Last Qualification (LastQualification) and Majors -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="qualification">Recent / Last Qualification *</label>
+    <input type="text" id="qualification" name="qualification" class="letters-only" required placeholder="Bachelor's Degree" maxlength="20">
+  </div>
+  <div class="form-group">
+    <label for="majors">Majors *</label>
+    <input type="text" id="majors" name="majors" class="letters-only" pattern="^[a-zA-Z. ]+$" required placeholder="Computer Science" maxlength="50">
+  </div>
+</div>
 
-  <label for="contact_number">Contact Number *</label>
-  <input type="text" id="contact_number" name="contact_number" required>
+<!-- Institute and Passing Year (PassingYear) -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="institute">Institute *</label>
+    <input type="text" id="institute" name="institute" class="letters-only" pattern="^[a-zA-Z. ]+$" required placeholder="ABC University" maxlength="20">
+  </div>
+  <div class="form-group">
+    <label for="passing_year">Passing Year *</label>
+    <input type="number"class="wide-input" id="passing_year" name="passing_year" min="1900" max="2099" step="1" required placeholder="YYYY" maxlength="4">
+  </div>
+</div>
 
-  <label for="country">Home Location - Country *</label>
-  <input type="text" id="country" name="country" required>
+<!-- Last Employer Name (LastEmployerName) and Last Designation (LastDesignation) -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="employer_name">Recent / Last Employer Name *</label>
+    <input type="text" id="employer_name" name="employer_name" class="letters-only" required placeholder="XYZ Corporation" maxlength="10">
+  </div>
+  <div class="form-group">
+    <label for="designation">Recent / Last Designation *</label>
+    <input type="text" id="designation" name="designation" class="letters-only" required placeholder="Software Engineer" maxlength="10">
+  </div>
+</div>
+<!-- Gross Salary and Last Drop Salary -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="gross_salary">Gross Salary *</label>
+    <input type="text" id="gross_salary" name="gross_salary" class="number-only" required maxlength="7" placeholder="Enter Gross Salary (Numeric, up to 7 digits)">
+  </div>
+  <div class="form-group">
+    <label for="last_drop_salary">Last Drop Salary *</label>
+    <input type="text" id="last_drop_salary" name="last_drop_salary" class="number-only" required maxlength="7" placeholder="Enter Last Drop Salary (Numeric, up to 7 digits)">
+  </div>
+</div>
 
-  <label for="city">Home Location – City *</label>
-  <input type="text" id="city" name="city" required>
 
-  <!-- Qualification Information -->
-  <label for="qualification">Recent / Last Qualification *</label>
-  <input type="text" id="qualification" name="qualification" required>
 
-  <label for="majors">Majors *</label>
-  <input type="text" id="majors" name="majors" required>
+<!-- Work Country (WorkCountry) and Work City (WorkCity) -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="work_country">Work Location - Country *</label>
+    <input type="text" id="work_country" name="work_country" class="letters-only" required placeholder="United States" maxlength="15">
+  </div>
+  <div class="form-group">
+    <label for="work_city">Work Location – City *</label>
+    <input type="text" id="work_city" name="work_city" class="letters-only" required placeholder="New York" maxlength="15">
+  </div>
+</div>
 
-  <label for="institute">Institute *</label>
-  <input type="text" id="institute" name="institute" required>
+<!-- Total Experience (Experience) and About Yourself (About) -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="total_experience">Total Experience (in years) *</label>
+    <input type="text" id="total_experience" name="total_experience" min="0" class="num-only" max="99" required placeholder="0" maxlength="2">
+  </div>
+  <div class="form-group">
+    <label for="about_yourself">Tell us About Yourself *</label>
+    <textarea id="about_yourself" name="about_yourself" class="letters-only" placeholder="Briefly describe yourself (100 words)" pattern="^[a-zA-Z. ]+$" required maxlength="100"></textarea>
+  </div>
+</div>
 
-  <label for="passing_year">Passing Year *</label>
-  <input type="text" id="passing_year" name="passing_year" required>
+<!-- Resume Upload -->
+<div class="form-row">
+  <div class="form-group">
+    <label for="resume">Upload CV (doc, pdf only) *</label>
+    <input type="file" id="resume" name="resume" accept=".doc,.docx,.pdf" required>
+  </div>
+</div>
 
-  <!-- Experience Information -->
-  <label for="employer_name">Recent / Last Employer Name *</label>
-  <input type="text" id="employer_name" name="employer_name" required>
+<!-- Submit Button -->
+<div class="form-row">
+  <div class="form-group">
+    <input type="submit" value="Submit Application">
+  </div>
+</div>
 
-  <label for="designation">Recent / Last Designation *</label>
-  <input type="text" id="designation" name="designation" required>
-
-  <label for="work_country">Work Location - Country *</label>
-  <input type="text" id="work_country" name="work_country" required>
-
-  <label for="work_city">Work Location – City *</label>
-  <input type="text" id="work_city" name="work_city" required>
-
-  <label for="total_experience">Total Experience (in years) *</label>
-  <input type="text" id="total_experience" name="total_experience" required>
-
-  <label for="about_yourself">Tell us About Yourself *</label>
-  <textarea id="about_yourself" name="about_yourself" required></textarea>
-
-  <!-- Resume Upload -->
-  <label for="resume">Upload CV (doc, pdf, image only) *</label>
-  <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
-
-  <input type="submit" value="Submit Application">
+<!-- <input type="submit" value="Submit Application"> -->
 </form>
+
 <div id="success-modal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
@@ -303,9 +448,80 @@ h2{
   </div>
 </div>
 
-
 </body>
+
+
 <script>
+  console.log("hello");
+  // JavaScript to allow only letters and characters in specified input fields
+const letterInputFields = document.querySelectorAll('.letters-only');
+
+letterInputFields.forEach((field) => {
+  field.addEventListener('input', function () {
+    // Remove any non-letter and non-character characters
+    this.value = this.value.replace(/[^a-zA-Z. ]/g, '');
+
+    // Display a prompt if numbers are entered
+    if (/[^a-zA-Z. ]/.test(this.value)) {
+      alert('Only letters and characters are allowed. Numbers are not permitted.');
+      this.value = this.value.replace(/[^a-zA-Z. ]/g, ''); // Remove numbers
+    }
+  });
+});
+
+
+
+const numberAndHyphenInputFields = document.querySelectorAll('.num-and-hyphen');
+numberAndHyphenInputFields.forEach((field) => {
+  field.addEventListener('input', function () {
+    // Remove any non-numeric characters and hyphens
+    this.value = this.value.replace(/[^\d-]/g, '');
+
+    // Display a prompt if non-numeric characters are entered
+    if (/[^\d-]/.test(this.value)) {
+      alert('Only numbers and hyphens are allowed in this field.');
+      this.value = this.value.replace(/[^\d-]/g, ''); // Remove non-numeric characters and hyphens
+    }
+  });
+});
+
+const numberInputFields = document.querySelectorAll('.num-only');
+numberInputFields.forEach((field) => {
+  field.addEventListener('input', function () {
+    // Remove any non-numeric characters
+    this.value = this.value.replace(/[^\d]/g, '');
+
+    // Display a prompt if non-numeric characters are entered
+    if (/[^\d]/.test(this.value)) {
+      alert('Only numbers are allowed in this field.');
+      this.value = this.value.replace(/[^\d]/g, ''); // Remove non-numeric characters
+    }
+  });
+});
+// Numeric input and max length validation for Gross Salary and Last Drop Salary
+const numInputFields = document.querySelectorAll('.number-only');
+
+numericInputFields.forEach((field) => {
+  field.addEventListener('input', function () {
+    // Remove any non-numeric characters
+    this.value = this.value.replace(/[^\d]/g, '');
+
+    // Disable input after 7 characters
+    if (this.value.length >= 7) {
+      this.value = this.value.slice(0, 7); // Truncate to 7 characters
+      this.setAttribute('maxlength', '7'); // Set maxlength to 7 to prevent further input
+    } else {
+      this.removeAttribute('maxlength'); // Remove maxlength to allow input
+    }
+  });
+});
+
+
+
+
+
+
+
 // Get the modal
 var modal = document.getElementById('success-modal');
 
@@ -313,7 +529,7 @@ var modal = document.getElementById('success-modal');
 var span = document.getElementsByClassName('close')[0];
 
 // Check if the success flag is set and show the modal
-if (<?php echo isset($success) && $success ? 'true' : 'false'; ?>) {
+if (<?php echo (isset($success) && $success) ? 'true' : 'false'; ?>) {
   showModal();
 }
 
@@ -328,7 +544,9 @@ function closeModal() {
 }
 
 
-</script>
 
+
+
+</script>
 
 </html>

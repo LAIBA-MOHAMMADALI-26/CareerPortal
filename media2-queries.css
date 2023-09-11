@@ -1,5 +1,44 @@
 /* whole page 768*/
 @media screen and (max-width:768px  ){
+
+
+/* Move the hamburger menu to the right */
+/* .navbar-toggler {
+  order: 1;
+} */
+
+/* Move the logo to the left */
+
+/* Adjust the spacing between the logo and the hamburger menu */
+.navbar-collapse {
+  justify-content: flex-end;
+}
+img[src="images/logo-modified.png"] {
+  width: 40% !important;
+  height: 71px !important;
+  margin-top: 0px !important;
+  padding-left: 0px !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+
+.navbar {
+  height: auto; /* Remove fixed height */
+  padding-top: 0; /* Remove top padding */
+  padding-bottom: 0; /* Remove bottom padding */
+  border-bottom: none; /* Remove border */
+  border-bottom: 2px solid #ed1010;
+border-color: #eb0505;
+}
+
+.navbar-brand {
+  margin-right: 0;
+  margin-top: 0; /* Remove top margin */
+  padding-left: 0; /* Remove left padding */
+}
+
+
     /* why jaffer group*/
     p {
         font-size: 11px;
@@ -22,6 +61,16 @@
 /* why jaffer group*/
 
     /* ceo mesage */
+  /* CSS for the image with a specific file name */
+img[src$="BENEFITS.png"] {
+  max-width: 150%; /* Ensure the image doesn't exceed its parent's width */
+  height: 120%; /* Maintain the aspect ratio of the image */
+  display: block;
+  margin-bottom: 0px; /* Remove any extra spacing around the image */
+  margin: 0 auto; /* Center the image horizontally within its container */
+  /* Add any other styles you want to apply to this specific image */
+}
+
 
 .main-container {
   display: flex;
@@ -37,7 +86,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 94%;
+  width: 98%;
   font-size: 50px;
   font-family:  serif;
   background-color: white;
@@ -45,6 +94,34 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   height:70%;
 }
+step h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: red;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+
+.step h3, .step p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.step h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #8D150D;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* CSS for the profile image */
+img[src="images/naseer.jpg"] {
+  max-width: 90%; /* Ensure the image doesn't exceed its parent's width */
+  height: auto; /* Maintain the aspect ratio of the image */
+  display: block; /* Remove any extra spacing around the image */
+  margin: 0 auto; /* Center the image horizontally within its container */
+  /* Add any other styles you want to apply to this specific image */
+}
+
   /* close ceo mesage */
 
 /* cluture */
@@ -113,10 +190,17 @@
     margin-top: 100px;
   }
   
-  .image-container img {
-    max-width: 100%;
-    height: auto;
-  }
+/* CSS for the image with the specific file name "finalcollage.png" */
+body img[src$="finalcollage.png"] {
+  max-width: 200%; /* Ensure the image doesn't exceed its parent's width */
+  height: auto; /* Maintain the aspect ratio of the image */
+  display: block; /* Remove any extra spacing around the image */
+  margin: 0 auto; /* Center the image horizontally within its container */
+  padding: 0; /* Remove padding */
+}
+
+
+
   .message-container h2{
     font-size: 16px;
   }

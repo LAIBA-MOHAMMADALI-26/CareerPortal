@@ -1,7 +1,25 @@
 
-  @media (max-width: 425px) {
+
+@media screen and (max-width:426px  ){
+
+
+  .container {
+    height: 400px;
+    margin-top: 50%;
+    text-align: center;
+}
+
+div.vision {
+  color: black;
+  margin-top: 90%;
+}
+    .container {
+      text-align: center;
+      margin-top: 100%;
+     
+  }
     div.scr{
-      height:100vh;
+      height:400vh;
 
     }
    
@@ -24,17 +42,9 @@
     margin-top: 25px; /* Adjusted margin */
   }
   
-  .container {
-    height: 300px;
-    margin-top: 20%;
-    text-align: center;
-  }
+  
 
-  div.vision {
-    /* No changes */
-    color: black;
-    margin-top: 30%;
-  }
+  
 
   div.visimg {
     /* No changes */
