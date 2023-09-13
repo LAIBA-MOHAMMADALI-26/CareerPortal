@@ -7,7 +7,7 @@ include "connection.php"; // Include your database connection script
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Job Listing</title>
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
@@ -32,11 +32,11 @@ div.whole{
 
 /* nav css  */
 .red-icon {
-    color: #DF0B0B;
+    color: #f41d2f;
 }
 
 /* Move the hamburger menu to the right */
-.navbar-toggler {
+/*.navbar-toggler {
   order: 1;
 }
 
@@ -45,6 +45,9 @@ div.whole{
 /* Adjust the spacing between the logo and the hamburger menu */
 .navbar-collapse {
   justify-content: flex-end;
+  background-color:white;
+  margin-top:0px;
+  padding:0px;
 }
 
 .navbar {
@@ -265,11 +268,14 @@ li.nav#item{
         table{
           width:100%;
         }
-        
+
+        .nav-link.nav-link-ltr.active{
+          font-size: 12px;
+        }
         }
         @media screen and (max-width:768px){
           .navbar {
-  height: 18%; /* Remove fixed height */
+  height: 24%; /* Remove fixed height */
   padding-top: 0; /* Remove top padding */
   padding-bottom: 0; /* Remove bottom padding */
   border-bottom: none; /* Remove border */
@@ -328,6 +334,12 @@ border-color: #eb0505;
         table{
           width:80%;
         }
+        .navbar-collapse {
+  justify-content: flex-end;
+  background-color:white;
+  margin-top:-18px;
+  padding:0px;
+}
         }
         @media screen and (max-width:425px){
           .search-bar-section {
@@ -472,7 +484,7 @@ table.tab{
    
 <div class="container-fluid cont">
 <div class="search-bar-section">
-        <h2>Open Vacancies</h2>
+        <h2>Available Jobs</h2>
         <div class="search-bar">
             <div>
                 <label for="titleSearch" class="search-label">Search by Title:</label>
@@ -490,7 +502,7 @@ table.tab{
     </div>
 
     <div class="available-jobs-section container-fluid">
-        <h2 class="available-jobs-heading">Available Jobs</h2>
+      
         <table border='1' class="table table-striped tab">
             <thead>
             <tr>
@@ -565,6 +577,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         });
     });
 </script>
+ 
 
 </body>
 </html

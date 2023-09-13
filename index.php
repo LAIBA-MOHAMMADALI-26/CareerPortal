@@ -5,7 +5,7 @@
   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Career Portal</title>
 
     <!-- style sheet  -->
     <link rel="stylesheet" href="style.css">
@@ -52,7 +52,7 @@
      <!-- navbar starts -->
      <nav id="myNavbar" class="navbar fixed-top navbar-expand-lg text-dark" style="background-color: white;">
   <div class="container-fluid">
-    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -164,11 +164,11 @@
       
             
       <p>
-        <font-cairo>At Jaffer Group, we don't just offer jobs; we provide pathways to fulfilling careers built on a foundation of excellence and innovation. Joining our team means becoming a part of a legacy that spans generations, a culture that values diversity and inclusion, and a commitment to making a positive impact in the communities we serve. For over 75 years, Jaffer Group has been a trusted name, our rich history and tradition of excellence serve as a testament to the passion and dedication of our team. If you are seeking a workplace where you can grow, thrive, and make a difference, Jaffer Group welcomes you to explore the opportunities we have to offer.
-        </font-cairo></p>
+        At Jaffer Group, we don't just offer jobs; we provide pathways to fulfilling careers built on a foundation of excellence and innovation. Joining our team means becoming a part of a legacy that spans generations, a culture that values diversity and inclusion, and a commitment to making a positive impact in the communities we serve. For over 75 years, Jaffer Group has been a trusted name, our rich history and tradition of excellence serve as a testament to the passion and dedication of our team. If you are seeking a workplace where you can grow, thrive, and make a difference, Jaffer Group welcomes you to explore the opportunities we have to offer.
+    </p>
     </div>
     <div class="vision">
-      <img width="100%" height="100%" src="images/hands.png" alt="values">
+      <img width="80%" height="100%" src="images/hands.png" alt="values">
     </div>
   </center>
   </div>
@@ -213,9 +213,9 @@ After receiving the "Welcome Aboard" message, our comprehensive onboarding progr
 <div class="main-container" id="ceo">
     <div class="content-container">
         <div class="message-container">
-            <h2>CHAIRMAN'S MESSAGE</h2>
+            <h2 class="ne">Chairman Message</h2>
            
-            <i class="fa fa-quote-left" style="font-size:20px;color:red"></i>
+            <i class="fa fa-quote-left" style="font-size:20px;color:#f41d2f"></i>
             <p>  
                 The ongoing success of Jaffer Group relies on the high quality of our people and their commitment to the company objectives. Continued growth and development are essential for all our employees. 
                 We therefore need strong people management and development processes in all our businesses. As a reflection of our values and our Success Factors, the P&D Dialog is central to this.
@@ -224,8 +224,8 @@ After receiving the "Welcome Aboard" message, our comprehensive onboarding progr
         <div class="image-containers">
             <img width="%"100 height="100%" src="images/naseer.jpg" alt="Nasser N. S. Jaffer">
             <div class="image-overlay">
-                <h1>Nasser N. S. Jaffer</h1>
-                <h3></h3>
+                <h2>Nasser N. S. Jaffer</h2>
+                <!-- <h3></h3> -->
             </div>
         </div>
     </div>
@@ -298,15 +298,20 @@ After receiving the "Welcome Aboard" message, our comprehensive onboarding progr
 <!-- culture slider ends here  -->
 
 <!-- benefit  start here  -->
+<div class="benefits-heading">
+  <h2 class="benefits-heading" style="text-align: center;">Employee Benefits</h2>
+</div>
+
 <div class="section-container" id="benefits">
+<
   <div class="image-container">
-    <img class="larger-image" src="images/finalcollage.png" width="500px" height="70px" alt="Larger Image">
+    <img class="larger-image" src="images/finalcollage2.png" width="500px" height="70px" alt="Larger Image">
   </div>
   <div class="benefits-container">
-    <div class="h2"> <h2 class="benefits-heading">EMPLOYEE BENEFITS</h2></div>
+  
      
       <div class="benefits-icons">
-      <img src="images/BENEFITS.png" width="100%" height="90%" alt="">
+      <img src="images/BENEFITS1.png" width="100%" height="90%" alt="">
             
           </div>
           

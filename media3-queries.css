@@ -46,7 +46,7 @@
 
 /* Highlight Styles */
 .highlight {
-  color: #ff0000; /* Change this color to your preference */
+  color: #f41d2f; /* Change this color to your preference */
   font-weight: bold;
 }
 
@@ -108,7 +108,7 @@
   /* Styles for left and right columns */
   .left,
   .right {
-    font-family: serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
    
     width: 100%;
   }
@@ -141,7 +141,7 @@
     flex-direction: column;
     width: 100%;
     background-color: white;
-    font-family: serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 15px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   }
@@ -214,7 +214,7 @@
   align-items: center;
   width: 90%;
   height: 100%;
-  font-family: serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: white;
   padding: 10px; /* Adjusted padding for smaller screens */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -231,7 +231,7 @@
 .fa-fa-quote-left
  {
   font-size: 20px;
-  color: rgb(236, 20, 20);
+  color: #f41d2f;
   
   
 }

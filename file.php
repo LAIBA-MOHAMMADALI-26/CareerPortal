@@ -44,8 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $workCity = $_POST["work_city"];
     $totalExperience = $_POST["total_experience"];
     $aboutYourself = $_POST["about_yourself"];
-    $expectedsalary=$_POST['expected_salary'];
-    $grosssalary=$_POST['gross_salary'];
+    $lastdropsalary=$_POST['last_drop_salary'];
+    $grosssalary=$_POST['expected_salary'];
     // File upload handling
     $uploadDirectory = 'uploads/'; // Specify the directory where you want to store uploaded files
     $resumeFileName = $_FILES["resume"]["name"];
@@ -53,21 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     move_uploaded_file($_FILES["resume"]["tmp_name"], $resumeFilePath);
 
     // Insert data into the database
-    $sql = "INSERT INTO apply (ID,Title, CandidateName, DateOfBirth, Gender, CNIC, Email, ContactNo,
-     HomeCountry, HomeCity, LastQualification, Majors, Institute, PassingYear, LastEmployerName,
-    LastDesignation, LastDropSalary, GrossSalary, WorkCountry, WorkCity, Experience, About, CV)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-;
+    $sql = "INSERT INTO apply (ID, Title, CandidateName, DateOfBirth, Gender, CNIC, Email, ContactNo, HomeCountry, HomeCity, LastQualification, Majors, Institute, PassingYear, LastEmployerName, LastDesignation,LastDropSalary,GrossSalary, WorkCountry, WorkCity, Experience, About, CV) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
     
     if ($stmt) {
-        
-        mysqli_stmt_bind_param($stmt,"issssssssssssssssssssss",$jobId, $title, $fullName, $dob, $gender,
-         $cnic, $email, $contactNumber, $country, $city, $qualification, $majors, $institute, $passingYear, $employerName, 
-        $designation, $expectedsalary, $grosssalary, $workCountry, $workCity, $totalExperience, 
-        $aboutYourself, $resumeFilePath);
-
-
+        // Binding parameters and executing the statement
+        mysqli_stmt_bind_param($stmt, "issssssssssssssssssssss", $jobId, $title, $fullName, $dob, $gender, $cnic, $email, $contactNumber, $country, $city, $qualification, $majors, $institute, $passingYear, $employerName, $designation,
+        $lastdropsalary,$grosssalary, $workCountry, $workCity, $totalExperience, $aboutYourself, $resumeFilePath);
     
         if (mysqli_stmt_execute($stmt)) {
             $success = true;
@@ -87,13 +79,10 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Portal</title>
   <!-- Include your CSS and other meta tags -->
 
   <style>
-  body {
+    body {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
@@ -113,7 +102,7 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
       display: block;
       margin-bottom: 5px;
       font-weight: bold;
-      color:#f41d2f;
+      color: red;
     }
 
     /* Style for text input fields */
@@ -153,7 +142,7 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     }
 
     input[type="submit"]:hover {
-      background-color:#f41d2f;
+      background-color: #cc0000;
     }
 
     /* Style for form section headers */
@@ -229,7 +218,7 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     /* Additional style for invalid input fields */
     .invalid-input {
-      border: 2px solid #f41d2f;
+      border: 2px solid red;
     }
     /* Style for form rows */
 .form-row {
@@ -393,6 +382,9 @@ textarea {
 <div class="form-row">
   <div class="form-group">
     <label for="qualification">Recent / Last Qualification *</label>
+    <!-- <select class="wide-input" id="qualification" name="qualification" class="letters-only" required placeholder="Bachelor's Degree" maxlength="20"> -->
+      
+    
     <input type="text" id="qualification" name="qualification" class="letters-only" required placeholder="Bachelor's Degree" maxlength="20">
   </div>
   <div class="form-group">
@@ -424,6 +416,7 @@ textarea {
     <input type="text" id="designation" name="designation" class="letters-only" required placeholder="Software Engineer" maxlength="10">
   </div>
 </div>
+<!-- Gross Salary and Last Drop Salary -->
 <div class="form-row">
   <div class="form-group">
     <label for="gross_salary">Last Gross Salary *</label>
@@ -490,7 +483,7 @@ textarea {
 
 
 <script>
-  console.log("hello");
+  // console.log("hello");
   // JavaScript to allow only letters and characters in specified input fields
 const letterInputFields = document.querySelectorAll('.letters-only');
 
